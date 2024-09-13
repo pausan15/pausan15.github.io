@@ -1,0 +1,470 @@
+* {
+    box-sizing: border-box;
+}
+/* las filas se separan por un margen superior de 10px, y despues de cada linea se pone una linea sin contenido,
+que limpia todo lo que hay a ambos lados y es un elemento en bloque */
+.row{ margin-top:10px;}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/* todas las columnas tiene el float a la izq, una posicion relativa y se separan entre ellas 15px */
+[class*="col-"] {
+    float: left;
+	position:relative;
+}
+
+
+/* para escritorio/ordenador. Cada columna ocupa una quinceava parte de la pantalla total. Para completar la 
+pantalla entera el numero de columnas que añada en un div tiene que sumar 14. */
+.col-1  {width: 7.14%;}
+.col-2  {width: 14.29%;}
+.col-3  {width: 21.43%;}
+.col-4  {width: 28.57%;}
+.col-5  {width: 35.71%;}
+.col-6  {width: 42.86%;}
+.col-7  {width: 50%;}
+.col-8  {width: 54.14%;}
+.col-9  {width: 64.29%;}
+.col-10 {width: 71.42%;}
+.col-11 {width: 78.57%;}
+.col-12 {width: 85.71%;}
+.col-13 {width: 92.86%;}
+.col-14 {width: 100%;}
+
+
+/* un banner con los iconos que redireccionan a las rrss, ocupa el % de una columna */
+#banner_der {
+position:fixed;
+background-color: #574747;
+height: 100%;
+width:7.14%;
+top:0px;
+text-align:center;
+padding-top:200px;
+left:92.86%;
+z-index: 0;}
+
+#banner_der a {
+  color: black;
+}
+
+/* un div que posiciona el logo como decoracion detras de toda la pagina, su unica funcion es estetica */
+#caja_logo {position:fixed;
+z-index: -1;
+width:100vw;
+height: 100%;
+top:-45%;
+left:-50%;
+}
+
+
+/* un div que funciona como menu para poder desplazarse por todas las paginas. No se ve en version movil */
+#caja_menu {position: fixed;
+display: block;
+z-index: 1;
+width: 19%;
+height: 270px;
+top:70%;
+left: 19.5px;
+font-family: garamond;
+font-size: 20px;}
+
+/* los enlaces de dicho menu no estaran decorados*/
+#caja_menu a {text-decoration: none;
+color: black;} 
+
+/* menu hamburguesa que aparece con la version movil */ 
+.hamburguesa {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #574747;
+overflow-x: hidden; /* las letras de detras estan ocultas*/ 
+transition: 0.5s;
+padding-top: 60px;
+}
+
+/* diseño del menu hamburguesa abierto */
+.hamburguesa a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 18px;
+display: block;
+transition: 0.3s;
+color: white;
+}
+
+
+/* diseño del boton para cerrar el menu hamburguesa*/ 
+.boton_cerrar {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+/* diseño del boton para abrir el menu hamburguesa*/ 
+.boton_abrir {
+font-size: 20px;
+cursor: pointer;
+background-color: #574747;
+color: white;
+width: 50px;
+padding: 10px 5px;
+border: none;
+}
+
+/* como se ve el menu cuando pongo el raton por encima */ 
+.boton_abrir:hover {
+background-color: #444;
+}
+
+.boton_cerrar:hover {
+cursor:pointer;
+}
+
+/* diseño de la transicion, el none hace que por defecto este oculto*/ 
+#menu {
+float: left;
+display: none;
+transition: margin-left .5s;
+padding: 1px;
+position: sticky;
+top: 0px;
+z-index: 2;
+}
+
+/*div que marca la altura y anchura de la miniatura de mis trabajos*/ 
+.dibujos {width: 14.29%;
+height: 33vh;
+/*background-color: #282828;*/
+overflow: hidden;
+}
+
+
+
+img {display: block;
+margin-left: auto;
+margin-right: auto;}
+
+
+/* todo el cuerpo de la pagina se escribira con great vibres*/
+@font-face {font-family:"great_vibres";
+src:url(../tipografia/GreatVibes-Regular.ttf);   
+}
+
+body {font-family: great_vibres;
+font-size: 36px;}
+
+/*funciones de los botones en general, principalmente pensados para el pop up*/
+button {
+background-color: #897f7f;
+color: white;
+padding: 14px 20px;
+border: none;
+cursor: pointer;
+width: 14.29%;
+text-align: center;
+float: right;
+}
+
+button:hover {
+background-color: black;
+} /* cuando se pase el raton por encima de todos los botones, el fondo se pondra en negro siempre*/
+
+
+
+/* le he dado una clase al boton de comprar para que en la version movil se quede centrado el texto respecto al boton y viewpoint*/
+.boton_comprar {
+background-color: #897f7f;
+color: white;
+padding: 14px 20px;
+border: none;
+cursor: pointer;
+width: 14.29%;
+text-align: center;
+float: right;  
+}
+
+.boton_comprar:hover {
+  background-color: black;
+}
+
+
+/* le he dado una clase al boton de la x para que en la version movil se quede centrado el texto respecto al boton y viewpoint*/
+.boton_x {
+background-color: #897f7f;
+color: white;
+padding: 14px 20px;
+border: none;
+cursor: pointer;
+width: 14.29%;
+text-align: center;
+float: right;  
+}
+
+.boton_x:hover {
+  background-color: black;
+}
+
+
+/* en especifico, el boton de enviar de la parte de encargos ira a la izq, a diferencia del resto de botones que flotan a la derecha*/
+#boton_enviar {
+float: left;
+background-color: #574747; 
+}
+
+/* del mismo modo, cuando el raton pase por encima, se cambia el color de fondo a negro*/
+
+#boton_enviar:hover {
+background-color: black; 
+}
+
+#volver_arriba {
+z-index: 2;
+text-decoration: none;
+background-color: #574747;
+position: fixed;
+left: 87vw;
+top: 90vh;
+cursor: pointer;
+text-align: center;
+width: 35px;
+height: 35px;
+border-radius: 50px;
+font-size: 30px;
+font-family: garamond;
+padding-top: 5px;
+color: white;
+}
+
+#volver_arriba a {color: white;
+text-decoration: none;}
+
+
+/* el pop up, actua como una caja que se pone por delante y que ocupa la totalidad de la pantalla*/
+.modal {
+display: none; /*oculto por defecto*/
+position: fixed; 
+font-family: garamond; 
+font-size: 17px; 
+color: white;
+z-index: 2;
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto;
+background-color: rgba(0,0,0,0.8); /* el fondo de la pag se queda en negro con un poco de opacidad, 
+                                    para que se siga viendo pero no distraiga */
+padding-top: 10px;
+}
+
+/* contenido de la caja del modal, el popup */
+.modal-content {
+padding: 2%;
+background-color: #574747;
+margin: 10px auto 15% auto; /* 10px de margen superior, 15% de abajo, y centrado */ 
+width: 75vw;
+height: 95vh; 
+}
+
+.modal_horizontal-content {
+padding: 2%;
+background-color: #574747;
+margin: 10px auto 15% auto; /* 10px de margen superior, 15% de abajo, y centrado */ 
+width: 75vw;
+height: 95vh; 
+}
+
+.modal-peces {
+padding: 2%;
+background-color: #574747;
+margin: 10px auto 15% auto; /* 10px de margen superior, 15% de abajo, y centrado */ 
+width: 75vw;
+height: 95vh; 
+}
+
+
+/* para que funcione el pop up, tengo que meter todos los dibujos en una clase que se enlace a la etiqueta modal, son 
+elementos en bloque que se centran respecto a los lados*/
+.dibujos_popup {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 15px;
+}
+
+
+/* una vez que se abre el pop up los dibujos ocupan el 100% del tamaño designados para ello*/
+
+.dibujos_popup_grande{
+width: 100%;
+}
+
+/* el popup de la version movil tendra ligeras diferencias para conseguir que el diseño sea totalmente resposive*/
+
+.dibujos_popup_movil {
+display: none;
+margin-top: 60px;
+}
+
+/* el texto dentro del pop up, para que no se pegue a los lados de la caja que contiene el pop up, le pongo un padding*/
+.texto_popup{
+font-size: 17px;
+text-align: justify;
+}
+
+
+/* cuando se pone el raton por encima de los dibujos, se crea una sombra por detras de la caja que los contiene, para indicar
+que se puede interactuar con la imagen*/
+.resaltar_dibujo:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* cuando se pone el raton por encima de los dibujos, cambia el cursor, para indicar que se puede interactuar con la imagen*/
+.cambiar_cursor {
+  cursor: pointer;
+}
+
+
+/* en la pag de sobre mi, un div que contiene el texto que habla sobre mis estudios */
+#texto_estudios {position: relative;
+padding-left: 1%;
+padding-right: 1%;
+text-align: justify;
+font-family: garamond;
+font-size: 16px; 
+}
+
+/* en la pag de sobre mi, un div que contiene el texto que habla sobre mi experiencia laboral, a diferencia del de arriba, no tiene 
+padding a la izq para que se alinee con la foto*/
+.texto_experiencia {position: relative;
+padding-right: 1%;
+text-align: justify;
+font-family: garamond;
+font-size: 16px; 
+}
+
+/*en la pag de sobre mi, un parrafo que contiene una linea en blanco que se añadira en la version movil para que quede mas estetico*/
+.linea_en_blanco {
+  display: none;
+}
+
+/*de la misma forma, borrara una linea que hace que se separen mucho los texto en la version movil. Su unica funcion es estetica*/
+.desaparece {display: block;}
+
+/* en la pag de encargos, las cajas vacias para simular donde habria que escribir el mensaje en caso de que los clentes 
+quieran ponerse en contacto o hacer algun encargo */
+.caja_vacia {position: relative;
+width: 70%;
+height: 20px;
+padding: 1px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-bottom: 16px;
+overflow: hidden;
+}
+
+/* caja vacia para simular donde habria que escribir el mensaje en caso de que los clentes 
+quieran ponerse en contacto o hacer algun encargo, ligeramente mas grande para el cuerpo del mensaje */
+.caja_vacia_grande {position: relative;
+width: 70%;
+height: 120px;
+padding: 1px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+}
+
+
+/* para que todo lo que he escrito en la pag de encargos este escrito con la misma tipografia que el resto de la pag, lo he metido
+en un contenedor que establece esa tipo*/
+.contenedor_contactos {
+  font-family: garamond;
+  font-size: 15px;
+}
+
+
+/* etiqeuta footer, sirve para colocar un banner en la parte inferior de la pantalla, que enlaza a las rrss*/
+footer {
+    background-color:#574747;
+    height:50px;
+    width: 100%;
+    text-align:center;
+    clear:both;
+    padding: 0.5%;
+    display: none;
+}
+
+/* los enlaces a otras paginas, siempre se mantendran en negro*/
+
+footer a {color: black;}
+
+
+
+@media only screen and (max-width: 768px) {
+    /* para el movil: */
+    [class*="col-"] {width: 100%;}
+  #menu {display: block;}
+  #caja_menu {display: none;}
+  #banner_der {display: none;}
+  #caja_logo {display: none;}
+  footer {display: block;}
+  .boton_comprar {font-size: 8px;
+                  padding-left: 2%;}
+  .boton_x {font-size: 17px;
+            padding-left: 5%;}
+  #boton_enviar {font-size: 15px;
+                padding-left: 2.5%;
+                width:50%;}
+  .linea_en_blanco {display: block;}
+  .desaparece {display: none;}
+  .dibujos_popup {display: none;}
+  .dibujos_popup_movil {display: block;}
+  .texto_popup {font-size: 15px;
+                padding-right: 50px;
+                padding-top: 5px;
+                }
+  .modal-content {height: 90vh;}
+  .modal_horizontal-content {height: 65vh;}
+  .modal-peces {height: 45vh}
+}
+
+#dibujo01 {background-image: url('../fotos/dibujos/ilustracion_angel.jpg');}
+#dibujo02 {background-image: url('../fotos/dibujos/ilustracion_hada_flores.jpg');}
+#dibujo03 {background-image: url('../fotos/dibujos/ilustracion_hada_maceta.jpg');}
+#dibujo05 {background-image: url('../fotos/dibujos/ilustracion_unicornio.jpg');}
+#dibujo07 {background-image: url('../fotos/dibujos/ilustracion_girasoles.jpg');}
+#dibujo08 {background-image: url('../fotos/dibujos/ilustracion_peces.jpg');}
+#dibujo09 {background-image: url('../fotos/dibujos/ilustracion_metamorfosis.jpg');}
+#dibujo10 {background-image: url('../fotos/dibujos/ilustracion_noche.jpg');}
+#dibujo11 {background-image: url('../fotos/dibujos/ilustracion_dama_cisne.jpg');}
+#dibujo12 {background-image: url('../fotos/dibujos/ilustracion_hada.jpg');}
+#dibujo21 {background-image: url('../fotos/dibujos/ilustracion_bosque.jpg');}
+#maqueta01 {background-image: url('../fotos/maquetas/3d_01.jpg');}
+#maqueta02 {background-image: url('../fotos/maquetas/3d_02.jpg');}
+#maqueta03 {background-image: url('../fotos/maquetas/3d_03.jpg');}
+#maqueta04 {background-image: url('../fotos/maquetas/3d_04.jpg');}
+#maqueta05 {background-image: url('../fotos/maquetas/3d_05.jpg');}
+#maqueta06 {background-image: url('../fotos/maquetas/3d_06.jpg');}
+#maqueta07 {background-image: url('../fotos/maquetas/3d_modelado_industrial.jpg');}
+#maqueta08 {background-image: url('../fotos/maquetas/3d_modelado_organico.png');}
+#maqueta09 {background-image: url('../fotos/maquetas/3d_modelado_organico2.png');}
+
+
+.dibujos_horizontal{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}

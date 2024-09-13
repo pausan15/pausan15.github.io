@@ -1,0 +1,106 @@
+
+* {
+    box-sizing: border-box;
+}
+/* las filas se separan por un margen superior de 10px, y después de cada línea se pone una linea sin contenido,
+que limpia todo lo que hay a ambos lados y es un elemento en bloque */
+.row{ margin-top:10px;}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/* todas las columnas tiene el float a la izq, una posición relativa y se separan entre ellas 15px */
+[class*="col-"] {
+    float: left;
+	position:relative;
+    background-color: white;
+}
+
+/* la imagen actúa como bloque y se alinea al centro*/ 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* etiqeuta footer, sirve para colocar un banner en la parte inferior de la pantalla, que enlaza a las rrss*/
+footer {
+    background-color:#574747;
+    height:50px;
+    width: 100%;
+    text-align:center;
+    clear:both;
+    padding: 0px;
+    padding-top: 0.5%;
+    font-size: 27px;
+}
+
+/* los enlaces a otras paginas, siempre se mantendran en negro*/
+
+footer a {color: black;}
+
+footer a:hover {color: black;}
+
+footer a:visited {color: black;}
+
+
+
+/* todo el cuerpo de la pagina se escribira con great vibres*/
+@font-face {font-family:"great_vibres";
+src:url(../tipografia/GreatVibes-Regular.ttf);   
+}
+
+body {font-family: great_vibres;
+font-size: 36px;}
+
+.texto_carrusel {font-family: garamond;
+box-sizing: border-box;
+font-size: 16px;
+}
+
+.titulos {font-family: great_vibres;
+font-size: 25px;}
+
+
+
+/* para escritorio/ordenador. Cada columna ocupa una quinceava parte de la pantalla total. Para completar la 
+pantalla entera el número de columnas que añada en un div tiene que sumar 15. */
+.col-1  {width: 6.66%;}
+.col-2  {width: 13.33%;}
+.col-3  {width: 20%;}
+.col-4  {width: 26.66%;}
+.col-5  {width: 33.33%;}
+.col-6  {width: 40%;}
+.col-7  {width: 46.66%;}
+.col-8  {width: 53.33%;}
+.col-9  {width: 60%;}
+.col-10 {width: 66.66%;}
+.col-11 {width: 73.33%;}
+.col-12 {width: 80%;}
+.col-13 {width: 86.66%;}
+.col-14 {width: 93.33%;}
+.col-15 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* para el móvil: */
+    [class*="col-"] {
+        width: 100%;
+    }
+    .texto_carrusel {
+    font-size: 10px;
+    }
+
+    .titulos {
+    font-size: 12px;
+    }
+}
+
+.carousel-inner  .item  img,  .carousel-inner  .item  a  img {
+          width: 100%;
+          margin: auto;
+      }
+      
+      .container{
+            width: 100%;
+      }

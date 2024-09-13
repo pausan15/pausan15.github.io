@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+/* las filas se separan por un margen superior de 10px, y despues de cada linea se pone una linea sin contenido,
+que limpia todo lo que hay a ambos lados y es un elemento en bloque */
+.row{ margin-top:10px;}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/* todas las columnas tiene el float a la izq, una posicion relativa y se separan entre ellas 15px */
+[class*="col-"] {
+    float: left;
+	position:relative;
+}
+
+
+/* para escritorio/ordenador. Cada columna ocupa una quinceava parte de la pantalla total. Para completar la 
+pantalla entera el numero de columnas que añada en un div tiene que sumar 14. */
+.col-1  {width: 7.14%;}
+.col-2  {width: 14.29%;}
+.col-3  {width: 21.43%;}
+.col-4  {width: 28.57%;}
+.col-5  {width: 35.71%;}
+.col-6  {width: 42.86%;}
+.col-7  {width: 50%;}
+.col-8  {width: 54.14%;}
+.col-9  {width: 64.29%;}
+.col-10 {width: 71.42%;}
+.col-11 {width: 78.57%;}
+.col-12 {width: 85.71%;}
+.col-13 {width: 92.86%;}
+.col-14 {width: 100%;}
+
+
+/* un banner con los iconos que redireccionan a las rrss, ocupa el % de una columna */
+#banner_der {
+position:fixed;
+background-color: #574747;
+height: 100%;
+width:7.14%;
+top:0px;
+text-align:center;
+padding-top:200px;
+left:92.86%;
+z-index: 0;}
+
+#banner_der a {
+  color: black;
+}
+
+/* un div que posiciona el logo como decoracion detras de toda la pagina, su unica funcion es estetica */
+#caja_logo {position:fixed;
+z-index: -1;
+width:100vw;
+height: 100%;
+top:-45%;
+left:-50%;
+}
+
+
+/* un div que funciona como menu para poder desplazarse por todas las paginas. No se ve en version movil */
+#caja_menu {position: fixed;
+display: block;
+z-index: 1;
+width: 19%;
+height: 270px;
+top:70%;
+left: 19.5px;
+font-family: garamond;
+font-size: 20px;}
+
+/* los enlaces de dicho menu no estaran decorados*/
+#caja_menu a {text-decoration: none;
+color: black;} 
+
+/* menu hamburguesa que aparece con la version movil */ 
+.hamburguesa {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #574747;
+overflow-x: hidden; /* las letras de detras estan ocultas*/ 
+transition: 0.5s;
+padding-top: 60px;
+}
+
+/* diseño del menu hamburguesa abierto */
+.hamburguesa a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 18px;
+display: block;
+transition: 0.3s;
+color: white;
+}
+
+
+/* diseño del boton para cerrar el menu hamburguesa*/ 
+.boton_cerrar {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+/* diseño del boton para abrir el menu hamburguesa*/ 
+.boton_abrir {
+font-size: 20px;
+cursor: pointer;
+background-color: #574747;
+color: white;
+width: 50px;
+padding: 10px 5px;
+border: none;
+}
+
+/* como se ve el menu cuando pongo el raton por encima */ 
+.boton_abrir:hover {
+background-color: #444;
+}
+
+.boton_cerrar:hover {
+cursor:pointer;
+}
+
+/* diseño de la transicion, el none hace que por defecto este oculto*/ 
+#menu {
+float: left;
+display: none;
+transition: margin-left .5s;
+padding: 1px;
+position: sticky;
+top: 0px;
+z-index: 2;
+}
+
+
+img {display: block;
+margin-left: auto;
+margin-right: auto;}
+
+
+/* todo el cuerpo de la pagina se escribira con great vibres*/
+@font-face {font-family:"great_vibres";
+src:url(../tipografia/GreatVibes-Regular.ttf);   
+}
+
+body {font-family: great_vibres;
+font-size: 36px;}
+
+/*funciones de los botones en general, principalmente pensados para el pop up*/
+button {
+background-color: #897f7f;
+color: white;
+padding: 14px 20px;
+border: none;
+cursor: pointer;
+width: 14.29%;
+text-align: center;
+float: right;
+}
+
+button:hover {
+background-color: black;
+} /* cuando se pase el raton por encima de todos los botones, el fondo se pondra en negro siempre*/
+
+.boton_finalizar_compra {
+background-color: #574747;
+color: white;
+padding: 14px 20px;
+border: none;
+cursor: pointer;
+text-align: center;
+float: left;
+width: 100%;
+}
+
+.contenedor_carrito {
+  font-family: garamond;
+  font-size: 25px;
+  text-align: center;
+}
+
+.carrito {
+  font-family: garamond;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.carrito_movil {
+  display: none;
+  font-family: garamond;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 30px;}
+
+.carrito_desktop {display: block;}
+
+.boton_x {
+background-color: #574747;
+color: white;
+padding-left:15px;
+border: none;
+cursor: pointer;
+width: 40px;
+text-align: center;
+}
+
+.boton_x:hover {
+  background-color: black;
+}
+
+/* etiqeuta footer, sirve para colocar un banner en la parte inferior de la pantalla, que enlaza a las rrss*/
+footer {
+    background-color:#574747;
+    height:50px;
+    width: 100%;
+    text-align:center;
+    clear:both;
+    padding: 0.5%;
+    display: none;
+}
+
+/* los enlaces a otras paginas, siempre se mantendran en negro*/
+
+footer a {color: black;}
+
+
+@media only screen and (max-width: 768px) {
+    /* para el movil: */
+.col-1  {width: 25%;}
+.col-2  {width: 50%;}
+.col-3  {width: 75%;}
+.col-4  {width: 100%;}
+  #menu {display: block;}
+  #caja_menu {display: none;}
+  #banner_der {display: none;}
+  #caja_logo {display: none;}
+  footer {display: block;}
+  .carrito_desktop {display: none;}
+  .carrito_movil {display: block;}
+
+}
