@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>Paula noctua artem</title>
+<link rel="stylesheet" href="icons">
+<link type="text/css" rel="stylesheet" href="css/estilo.css">
+<script src="https://kit.fontawesome.com/eac9608698.js"></script>
+<link rel="icon" type="image/gif" href="fotos/favicon.png">
+
+
+</head>
+
+<body>
+
+    <!-- foto del logo que sale por detras -->
+	<div id="caja_logo">
+		<img src="fotos/logo_sin_letra.png" style="width: 100%; opacity: 0.2;" alt="logo Paula noctua artem">
+	</div>
+
+  <!-- banner a la derecha que enlaza a las rrss-->
+  <div id="banner_der">
+    <a href="https://www.twitter.com"  target="new"><i class="fab fa-twitter"></i></a><br>
+    <a href="https://www.facebook.com"  target="new"><i class="fab fa-facebook"></i></a><br>
+    <a href="https://www.instagram.com/paula_noctuaartem"  target="new"><i class="fab fa-instagram-square"></i></a><br>
+    <a href="https://www.outlook.com"  target="new"><i class="fas fa-at"></i></a><br>
+    <a href="https://www.pinterest.com"  target="new"><i class="fab fa-pinterest"></i></a><br>
+  </div>
+
+
+ <!-- Menu normal, elemento en bloque en la version de escritorio, que pasa a estar en none en la version del movil -->
+  <div id="caja_menu">
+  <em>
+    <a href="index_sobre_mi.html" target="new"> 
+    Sobre mí
+    </a>
+    <br> <br>
+  <a href="index_portfolio.html" style="color:#000000">
+      Portfolio
+        </a><br>
+  <a href="index_portfolio.html#ilustraciones" style="color:#000000">
+       - Ilustraciones
+        </a><br>
+   <a href="index_portfolio.html#maquetas" style="color:#000000">
+      - 3D y maquetas
+        </a><br>
+  <a href="index_portfolio.html#fotografias" style="color:#000000">
+       - Fotografías
+        </a><br><br>
+  <a href="index_encargos.html" target="new"> 
+   Contáctame / encargos
+    </a>
+    </em>
+  </div>
+
+ <!-- Menu hamburguesa que esta por defecto oculto, y se ve convierte en bloque y se hace visible en version de movil -->
+<div id="menu_hamburguesa" class="hamburguesa">
+  <a class="boton_cerrar" onclick="cerrar_menu()">X</a>
+   <a href="index_sobre_mi.html" target="new"> 
+   Sobre mí
+    </a>
+    <br>
+  <a href="index_portfolio.html">  Portfolio</a>
+  <a href="index_portfolio.html#ilustraciones"> - Ilustraciones</a> 
+  <a href="index_portfolio.html#maquetas"> - 3D y maquetas</a> 
+  <a href="index_portfolio.html#fotografias"> - Fotografías</a><br>
+  <a href="index_encargos.html" target="new"> 
+   Contáctame / encargos
+    </a>
+  <div> <br> <img src="fotos/logo_inv.png " style="width: 250px;" alt="logo en blanco"></div>
+</div>
+
+
+<div id="menu">
+  <button class="boton_abrir" onclick="abrir_menu()">☰</button>
+</div>
+
+<div id="volver_arriba">
+  <a href="index_sobre_mi.html">^</a>
+</div>
+
+    <div class="row">
+       <div class="col-9">
+        &nbsp;
+       </div>
+       <div class="col-4">
+        <img src="fotos/sobre-mi.jpg" style="width: 80%;" alt="portfolio">
+       </div>
+    </div>
+
+ <!-- Cajas que contienen mi CV -->
+  <div class="row">
+      <div class="col-4">
+        &nbsp;
+      </div>
+      <div class="col-2 dibujos">
+        <img src="fotos/yo.jpg" style="height: 100%;" alt="foto de Paula">
+      </div>
+
+
+      <div class="col-7" id="texto_estudios">
+        <p class="linea_en_blanco"> <br> </p>
+        <strong> FORMACIÓN ACADÉMICA </strong> <br>
+        - Licenciada en el grado de Diseño de la facultad de Bellas Artes en la Universidad Complutense de Madrid (Madrid, España). (2017-2021). <br> 
+        - Graduada de Bachillerato: Científico tecnológico en el Instituto Gregorio Peces Barba (Colmenarejo, Madrid, España). (2015-2017). <br><br>
+        <strong> IDIOMAS </strong> <br>
+        - Español: lengua materna. <br>
+        - Inglés: Certificado B2, certificado CAE, PET de Cambridge. <br>
+        - Francés: Certificado B2, certificado de la escuela oficial de idiomas de Villalba. <br>
+      </div>
+    </div>
+    <div class="col-1 desaparece">
+        &nbsp;
+      </div>
+
+    <div class="row">
+       <div class="col-3 desaparece">
+        &nbsp;
+       </div>
+       <div class="col-4 texto_experiencia">
+        <br>
+        <strong> CONOCIMIENTO DE SOFTWARE </strong> <br><br>
+        <img src="fotos/icono_software.jpg" style="width: 100%;" alt="iconos de software">
+       </div>
+       <div class="col-4 texto_experiencia">
+        <br>
+        <p class="linea_en_blanco"> <br> </p>
+        <strong> APTITUDES </strong> <br><br>
+        <img src="fotos/icono_aptitudes.jpg" style="width: 100%;" alt="iconos de aptitudes">
+       </div>
+
+        <!-- <strong> EXPERIENCIA E HITOS LABORALES </strong> <br>
+        - Ganadora del primer premio del concurso Christmas Navidad de Caja Madrid de 2003. <br>
+        - Encargada de diseñar ilustraciones para pintar las paredes de diferentes aulas del instituto de Colmenarejo.<br>
+        - Encargada de los mockups para empresas de publicidad (campaña de 2018 para Yo bingo y campaña de 2018-2019 para Hornimans). <br>
+        - Encargada de diseñar los logos de las escuelas deportivas (gimnasia rítmica y artística y voleibol) del polideportivo de Colmenarejo. <br>
+        - Dibujo e ilustración: grafito, técnicas digitales y acuarela. <br> <br>
+        <strong> APTITUDES </strong> <br>
+        - Capacidad para tomar decisiones y resolver problemas. <br>
+        - Persona extremadamente responsable. <br>
+        - Capacidad para planificar, organizar y priorizar el trabajo. <br> 
+        - Capacidad para trabajar en equipo. <br>
+        - Alta disponibilidad. <br> 
+
+       </div> -->
+    </div>
+
+<div class="row">
+    <div class="col-15">
+      &nbsp;
+    </div>
+  </div>
+
+  <footer>
+<a href="https://www.twitter.com"  target="new"><i class="fab fa-twitter"></i></a> &nbsp;
+<a href="https://www.facebook.com"  target="new"><i class="fab fa-facebook"></i></a> &nbsp;
+<a href="https://www.instagram.com/paula_noctuaartem"  target="new"><i class="fab fa-instagram-square"></i></a> &nbsp;
+<a href="https://www.outlook.com"  target="new"><i class="fas fa-at"></i></a> &nbsp;
+<a href="https://www.pinterest.com"  target="new"><i class="fab fa-pinterest"></i></a> &nbsp;
+
+</footer>
+
+<script src="js/programacion2.js"></script>
+
+</body>
+</html>
